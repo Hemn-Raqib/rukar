@@ -1,5 +1,3 @@
-// VITE_API_URL=https://students-z4z4.onrender.com
-
 import './App.css'
 import { Route, createBrowserRouter, createRoutesFromElements, RouterProvider } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
