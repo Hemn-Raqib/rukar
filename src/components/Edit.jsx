@@ -12,7 +12,7 @@ const Edit = () => {
 });   
  const { id } = useParams();
     useEffect(() => {
-        axios.get(`http://localhost:2000/students/${id}`)
+        axios.get(`${import.meta.env.VITE_API_URL}/students/${id}`)
         .then((res) => { 
         setData(res.data);
         })
@@ -22,7 +22,7 @@ const Edit = () => {
     const navigate = useNavigate();
     const handleSubmit = (e) => {
       e.preventDefault();
-      axios.post(`http://localhost:2000/edit_user/${id}`, data)
+      axios.post(`${import.meta.env.VITE_API_URL}/edit_user/${id}`, data)
       .then((res) => {
           navigate("/");
       })
@@ -80,26 +80,3 @@ const Edit = () => {
 export default Edit
 
 
-{/*
-<form onSubmit={handlSubmit}>
-    
-        <input  id="name" type="text" name="sname"  required
-       onChange={(e) => setData({...data, name:e.target.value})} />
-    </div>
-    <div className='form-group my-3'>
-        <label htmlFor="email">Email</label>
-        <input  id="email" type="email" name="email" required
-        onChange={(e) => setData({...data, email:e.target.value})} />
-    </div>
-    <div className='form-group my-3'>
-        <label htmlFor="age">Age</label>
-        <input  id="age" type="text" name="age" required
-        onChange={(e) => setData({...data, age:e.target.value})} />
-    </div>
-    <div className='form-group my-3'>
-        <label htmlFor="gen">Gender</label>
-        <input  id="gen" type="text" name="gen" required
-        onChange={(e) => setData({...data, gen:e.target.value})} />
-    </div>
-    <button className='btn btn-success' type="submit">Save</button>
-</form> */}

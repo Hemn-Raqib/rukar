@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 const Create = () => {
 
     const [values, setValues] = useState({
+        id:'',
         name: '',
         email: '',
         age: '',
@@ -14,7 +15,7 @@ const Create = () => {
 
     const handlSubmit = (e) => {
         e.preventDefault();
-        axios.post('http://localhost:2000/add_user', values)
+        axios.post(`${import.meta.env.VITE_API_URL}/add_user`, values)
         .then((res) => {
             navigate("/");
         })
@@ -33,6 +34,11 @@ const Create = () => {
                             <div className="card-body">
                                 <h3 className="card-title text-center mb-4">Add Student</h3>
                                 <form onSubmit={handlSubmit}>
+                                    <div className="mb-3">
+                                        <label htmlFor="id" className="form-label">ID</label>
+                                        <input id="id" type="number" className="form-control" name="id" required
+                                            onChange={(e) => setValues({...values, id:e.target.value})} />
+                                    </div>
                                     <div className="mb-3">
                                         <label htmlFor="name" className="form-label">Name</label>
                                         <input id="name" type="text" className="form-control" name="sname" required

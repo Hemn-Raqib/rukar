@@ -7,7 +7,7 @@ const Read = () => {
     const [data, setData] = useState(null);
     const { id } = useParams();
     useEffect(() => {
-        axios.get(`http://localhost:2000/students/${id}`)
+        axios.get(`${import.meta.env.VITE_API_URL}/students/${id}`)
         .then((res) => { 
         setData(res.data);
         })

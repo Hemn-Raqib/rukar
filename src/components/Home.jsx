@@ -12,7 +12,7 @@ const Home = () => {
         if(deleted){
             setDeleted(false)
         }
-        axios.get('http://localhost:2000/students')
+        axios.get(`${import.meta.env.VITE_API_URL}/students`)
         .then((res) => { 
         setData(res.data.result);
         })
@@ -22,7 +22,7 @@ const Home = () => {
         const userConfirmed = confirm("Are You Sure You Want To Delete This User?");
 
         if (userConfirmed) {
-            axios.delete(`http://localhost:2000/delete_user/${id}`)
+            axios.delete(`${import.meta.env.VITE_API_URL}/delete_user/${id}`)
             .then((res) => {
                 setDeleted(true);
             })
