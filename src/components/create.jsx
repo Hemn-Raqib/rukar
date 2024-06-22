@@ -34,11 +34,11 @@ const Create = () => {
                             <div className="card-body">
                                 <h3 className="card-title text-center mb-4">Add Student</h3>
                                 <form onSubmit={handlSubmit}>
-                                    <div className="mb-3">
+                                    {/* <div className="mb-3">
                                         <label htmlFor="id" className="form-label">ID</label>
                                         <input id="id" type="number" className="form-control" name="id" required
                                             onChange={(e) => setValues({...values, id:e.target.value})} />
-                                    </div>
+                                    </div> */}
                                     <div className="mb-3">
                                         <label htmlFor="name" className="form-label">Name</label>
                                         <input id="name" type="text" className="form-control" name="sname" required
