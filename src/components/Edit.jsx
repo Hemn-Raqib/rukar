@@ -27,7 +27,12 @@ const Edit = () => {
           navigate("/");
       })
       .catch((error) => {
-          console.error(`there is an error from create.jsx file of submition ${error}`);
+        if (error.response && error.response.status === 400 && error.response.data.error === "Email already exists") {
+            // Show a message indicating that the email already exists
+            alert("Email already exists. Please use a different email.");
+        } else {
+            console.error(`There is an error from create.jsx file of submission ${error}`);
+        }
       })
   };
     if (!data) return <div>Loading...</div>; 
