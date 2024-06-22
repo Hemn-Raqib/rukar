@@ -34,7 +34,7 @@ const Home = () => {
 
   return (
     <div className='container-fluid bg-custom  vh-100 vw-200'>
-            <h3 className='text-center mt-5'>Students</h3>
+            <h3 className='text-center mt-5'>Students management system</h3>
             <div className="d-flex justify-content-end mb-4">
                 <Link className='btn btn-primary' to='/create'>Add New Student</Link>
             </div>
