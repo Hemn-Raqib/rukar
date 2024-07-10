@@ -55,7 +55,10 @@ const Home = () => {
                     <tr key={index}>
                         <td>{user.id}</td>
                         <td>{user.name}</td>
-                        <td>{user.email}</td>
+                         <td>
+                                <a href={`mailto:${user.email}`}>{user.email}</a>
+                            </td>
+{/*                         <td>{user.email}</td> */}
                         <td>{user.age}</td>
                         <td>{user.gender}</td>
                         <td>
